@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+body {
+    background-color: #0C0C0C;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: #DACFCD;
+    padding: 15px 15px;
+    margin: 0 30px;
+    position: relative;
+    float: right;
+}
+
+nav a:hover {
+    color: #F0E4E1;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #F0E4E1;
+    transition: all .5s;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 40vh); /* Full screen minus navbar height */
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* 50% dark overlay */
+    z-index: 2;
+}
+
+.hero-section h1 {
+    position: relative;
+    z-index: 3;
+    color: #F0E4E1;
+    font-size: 5rem; /* Adjust as needed */
+    text-transform: uppercase;
+    text-align: center;
+    line-height: calc(100vh - 40vh);
+    margin: 0;
+    font-weight: 400;
+}
+
+.profile-section {
+    display: flex;
+    gap: 50vh;
+    margin: 75px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.info h3 {
+    color: #F0E4E1;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.info ul {
+    list-style-type: none;
+}
+
+.info li {
+    color: #DACFCD;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.profile-section img {
+    border-radius: 100%;
+    width: 250px;
+}
+
+.banner-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banners {
+    display: flex;
+    width: calc(100vw - 30vh);
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Full width minus 15vh margin on each side */
+    margin: 0 auto; /* Center the container */
+    background: #191919;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 350px;
+    margin: 15px;
+}
+
+/* Styling for the second div */
+.banner-text {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.banner-projects {
+    flex: 0 0 60%;
+    background: #191919;
+}
+
+.banner-projects .banner-text {
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for positioning */
+    align-items: flex-start; /* Align items to the top of the div */
+    justify-content: flex-start; /* Align text to the left */
+    flex: 1;
+}
+
+.banner-projects .banner-text h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: #F0E4E1;
+}
+
+.banner-projects .banner-text p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #DACFCD;
+}
+
+.banner button {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 2rem;
+    border-width: 0;
+    background: #481E14;
+    color: #FBFAF8;
+}
+
+.banner-social button {
+    background: #F2613F;
+}
+
+.banner-social {
+    flex: 0 0 40%;
+}
+
+.banner-social .banner-text {
+    text-align: center;
+}
+
+.banner-social .banner-text h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.banner-image {
+    flex: 0 1 auto;
+    padding: 2.5rem;
+    margin: 10px;
+}
+
+.image {
+    height: 304px;
+    width: auto;
+}
+
+.projects-section {
+    z-index: 1;
+    text-align: center;
+    padding-left: 15vh;
+    padding-right: 15vh;
+    padding-top: 15px;
+    margin: 15vh 0 2rem; /* Margin below the navbar and some spacing above */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100vw - 30vh);
+}
+
+.projects-header {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for positioning */
+    align-items: flex-start; /* Align items to the top of the div */
+    justify-content: flex-start; /* Align text to the left */
+    flex: 1;
+}
+
+.projects-header h1 {
+    font-size: 72px;
+    font-weight: 900;
+    color: #F0E4E1;
+}
+
+.projects-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(43, 43, 43);
+    margin-bottom: 5px;
+    color: #DACFCD;
+}
+
+.projects-header p {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(150, 150, 150);
+    margin-bottom: 15px;
+}
+
+.projects-header span {
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.projects-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.project-button {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 2rem;
+    border-width: 0;
+    color: #FBFAF8;
+    margin-bottom: 15px;
+}
+
+.project-image {
+    height: 528px;
+    width: auto;
+}
+
+.github-button {
+    background-color: #333;
+    color: #fafafa;
+}
+
+.next-button {
+    color: #4078c0;
+}
+
+.back-button {
+    background-color: #f0f0f0;
+    color: #929292;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        margin: 0 5px;
+    }
+
+    .banners {
+        display: none;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        gap: 10vh;
+    }
+
+    .projects-section {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        width: 100%;
+    }
+
+    .projects-header {
+        text-align: center; /* Align text to the left */
+        align-items: center; /* Align items to the top of the div */
+    }
+
+    .project-image {
+        height: 475px;
+        width: auto;
+    }
+}
